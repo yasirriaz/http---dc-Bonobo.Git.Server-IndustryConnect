@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="DynamicService.DynamicService" CodeBehind="DynamicService.svc.cs" %>
