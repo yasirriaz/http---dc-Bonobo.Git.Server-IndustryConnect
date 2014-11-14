@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:24773/InventoryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" />
+  <xs:element name="GetPoCreditTerms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_stPOCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_nOrganization" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPoCreditTermsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="GetPoCreditTermsResult" nillable="true" type="q1:ArrayOfPOCreditPeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPOWithAdvance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nOrgId" type="xs:long" />
+        <xs:element minOccurs="0" name="p_nInvVendor" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPOWithAdvanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="GetPOWithAdvanceResult" nillable="true" type="q2:ArrayOfPurchaseOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePOFromBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nInvPo" type="xs:long" />
+        <xs:element minOccurs="0" name="p_bAdvancePmnt" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePOFromBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePOFromBillResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAdvancePayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_POCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_nOrgId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAdvancePaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateAdvancePaymentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreItemList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nStore" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="p_user_id" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="OrgId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="p_CategoryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_ProductCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_ProductDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_GenericName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="p_nLimit" type="xs:int" />
+        <xs:element minOccurs="0" name="p_nOffSet" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStoreItemListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="GetStoreItemListResult" nillable="true" type="q3:ArrayOfItemDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadUnitByItemOid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nItemOid" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadUnitByItemOidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="LoadUnitByItemOidResult" nillable="true" type="q4:ArrayOfItemUnit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadItem_LeafUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nItemOid" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadItem_LeafUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="LoadItem_LeafUnitResult" nillable="true" type="q5:ArrayOfItemUnit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nTransactionType" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="p_nOrgId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMaxCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStoreIssueRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="p_oStoreTransactions" nillable="true" type="q6:StoreTransaction" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="p_lStoreTransactionDetail" nillable="true" type="q7:ArrayOfStoreTransactionDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStoreIssueRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveStoreIssueRequestResult" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadIssuance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nRequestOid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadIssuanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="LoadIssuanceResult" nillable="true" type="q8:ArrayOfStoreTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSirDetailForPatientReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSirDetailForPatientReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="GetSirDetailForPatientReportResult" nillable="true" type="q9:ArrayOfStoreTransactionDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStoreIssueNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="p_oStoreTransactions" nillable="true" type="q10:StoreTransaction" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="p_lStoreTransactionDetail" nillable="true" type="q11:ArrayOfStoreTransactionDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStoreIssueNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveStoreIssueNoteResult" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadStoreCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrgID" type="xs:long" />
+        <xs:element minOccurs="0" name="search_Text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadStoreCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="LoadStoreCategoriesResult" nillable="true" type="q12:ArrayOfItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCategoryItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_ID" type="xs:long" />
+        <xs:element minOccurs="0" name="search_Text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCategoryItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" minOccurs="0" name="LoadCategoryItemsResult" nillable="true" type="q13:ArrayOfItemDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveInvDepartmentRecieving">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_ISSUANCE_ID" type="xs:long" />
+        <xs:element minOccurs="0" name="ST_TRANS_CODE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="N_INSERT_USER_ID" type="xs:long" />
+        <xs:element minOccurs="0" name="ORGANIZATION" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveInvDepartmentRecievingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveInvDepartmentRecievingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

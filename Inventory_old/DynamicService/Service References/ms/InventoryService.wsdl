@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InventoryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:24773/InventoryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:24773/InventoryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:24773/InventoryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Org.Softech.Inventory.Business.Objects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInventoryService_GetPoCreditTerms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPoCreditTerms" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetPoCreditTerms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPoCreditTermsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetPOWithAdvance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOWithAdvance" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetPOWithAdvance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOWithAdvanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_UpdatePOFromBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOFromBill" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_UpdatePOFromBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePOFromBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_UpdateAdvancePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdvancePayment" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_UpdateAdvancePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdvancePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetStoreItemList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItemList" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetStoreItemList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreItemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadUnitByItemOid_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadUnitByItemOid" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadUnitByItemOid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadUnitByItemOidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadItem_LeafUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadItem_LeafUnit" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadItem_LeafUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadItem_LeafUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetMaxCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxCode" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetMaxCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SaveStoreIssueRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStoreIssueRequest" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SaveStoreIssueRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStoreIssueRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadIssuance_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadIssuance" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadIssuance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadIssuanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetSirDetailForPatientReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSirDetailForPatientReport" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetSirDetailForPatientReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSirDetailForPatientReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SaveStoreIssueNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStoreIssueNote" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SaveStoreIssueNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStoreIssueNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadStoreCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadStoreCategories" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadStoreCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadStoreCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadCategoryItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCategoryItems" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_LoadCategoryItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCategoryItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SaveInvDepartmentRecieving_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInvDepartmentRecieving" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SaveInvDepartmentRecieving_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInvDepartmentRecievingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInventoryService">
+    <wsdl:operation name="GetPoCreditTerms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/GetPoCreditTerms" message="tns:IInventoryService_GetPoCreditTerms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/GetPoCreditTermsResponse" message="tns:IInventoryService_GetPoCreditTerms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOWithAdvance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/GetPOWithAdvance" message="tns:IInventoryService_GetPOWithAdvance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/GetPOWithAdvanceResponse" message="tns:IInventoryService_GetPOWithAdvance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOFromBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/UpdatePOFromBill" message="tns:IInventoryService_UpdatePOFromBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/UpdatePOFromBillResponse" message="tns:IInventoryService_UpdatePOFromBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdvancePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/UpdateAdvancePayment" message="tns:IInventoryService_UpdateAdvancePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/UpdateAdvancePaymentResponse" message="tns:IInventoryService_UpdateAdvancePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreItemList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/GetStoreItemList" message="tns:IInventoryService_GetStoreItemList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/GetStoreItemListResponse" message="tns:IInventoryService_GetStoreItemList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadUnitByItemOid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/LoadUnitByItemOid" message="tns:IInventoryService_LoadUnitByItemOid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/LoadUnitByItemOidResponse" message="tns:IInventoryService_LoadUnitByItemOid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadItem_LeafUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/LoadItem_LeafUnit" message="tns:IInventoryService_LoadItem_LeafUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/LoadItem_LeafUnitResponse" message="tns:IInventoryService_LoadItem_LeafUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/GetMaxCode" message="tns:IInventoryService_GetMaxCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/GetMaxCodeResponse" message="tns:IInventoryService_GetMaxCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStoreIssueRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/SaveStoreIssueRequest" message="tns:IInventoryService_SaveStoreIssueRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/SaveStoreIssueRequestResponse" message="tns:IInventoryService_SaveStoreIssueRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadIssuance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/LoadIssuance" message="tns:IInventoryService_LoadIssuance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/LoadIssuanceResponse" message="tns:IInventoryService_LoadIssuance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSirDetailForPatientReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/GetSirDetailForPatientReport" message="tns:IInventoryService_GetSirDetailForPatientReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/GetSirDetailForPatientReportResponse" message="tns:IInventoryService_GetSirDetailForPatientReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStoreIssueNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/SaveStoreIssueNote" message="tns:IInventoryService_SaveStoreIssueNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/SaveStoreIssueNoteResponse" message="tns:IInventoryService_SaveStoreIssueNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadStoreCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/LoadStoreCategories" message="tns:IInventoryService_LoadStoreCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/LoadStoreCategoriesResponse" message="tns:IInventoryService_LoadStoreCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCategoryItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/LoadCategoryItems" message="tns:IInventoryService_LoadCategoryItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/LoadCategoryItemsResponse" message="tns:IInventoryService_LoadCategoryItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveInvDepartmentRecieving">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInventoryService/SaveInvDepartmentRecieving" message="tns:IInventoryService_SaveInvDepartmentRecieving_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInventoryService/SaveInvDepartmentRecievingResponse" message="tns:IInventoryService_SaveInvDepartmentRecieving_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInventoryService" type="tns:IInventoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPoCreditTerms">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/GetPoCreditTerms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOWithAdvance">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/GetPOWithAdvance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePOFromBill">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/UpdatePOFromBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdvancePayment">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/UpdateAdvancePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreItemList">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/GetStoreItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadUnitByItemOid">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/LoadUnitByItemOid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadItem_LeafUnit">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/LoadItem_LeafUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxCode">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/GetMaxCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStoreIssueRequest">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/SaveStoreIssueRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadIssuance">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/LoadIssuance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSirDetailForPatientReport">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/GetSirDetailForPatientReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStoreIssueNote">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/SaveStoreIssueNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadStoreCategories">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/LoadStoreCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCategoryItems">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/LoadCategoryItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveInvDepartmentRecieving">
+      <soap:operation soapAction="http://tempuri.org/IInventoryService/SaveInvDepartmentRecieving" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InventoryService">
+    <wsdl:port name="BasicHttpBinding_IInventoryService" binding="tns:BasicHttpBinding_IInventoryService">
+      <soap:address location="http://localhost:24773/InventoryService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
